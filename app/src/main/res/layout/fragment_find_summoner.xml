@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                tools:context=".views.summoners.search.FragmentFindSummoner">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true"
+        android:tint="?mainColor"/>
+
+    <TextView
+        android:id="@+id/textVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/white"/>
+
+    <ImageButton
+        android:id="@+id/buttonHistoric"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/editTextSummoner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="?android:selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_historic"
+        android:text="Historic"
+        android:tint="?mainColor"/>
+
+    <ImageButton
+        android:id="@+id/buttonGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextSummoner"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/editTextSummoner"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="?android:selectableItemBackground"
+        android:elevation="10dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:src="@drawable/ic_search"
+        android:tint="?mainColor"/>
+    <!--android:text="@string/go"-->
+    <EditText
+        android:id="@+id/editTextSummoner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_toStartOf="@+id/buttonGo"
+        android:gravity="center_horizontal"
+        android:hint="@string/hint_summoner"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="?mainColor"
+        android:textSize="24sp"/>
+
+    <com.andiag.welegends.common.utils.FontNumberPicker
+        android:id="@+id/number_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonHistoric"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

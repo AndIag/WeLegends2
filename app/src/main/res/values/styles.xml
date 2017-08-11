@@ -1,0 +1,167 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/lightPrimary</item>
+        <item name="colorPrimaryDark">@color/lightPrimaryDark</item>
+        <item name="colorAccent">@color/lightAccent</item>
+
+        <!--<item name="colorControlNormal">@color/lightHighlight</item>-->
+        <item name="colorControlActivated">?mainColor</item>
+        <item name="colorControlHighlight">?mainColor</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="backgroundColor">@color/lightBackground</item>
+        <item name="mainColor">@color/darkorange</item>
+
+        <item name="android:buttonStyle">@style/LightButton</item>
+
+        <item name="cardStyle">@style/CardViewStyle.Light</item>
+
+        <item name="preferenceTheme">@style/Theme.SettingsPreference</item>
+
+        <item name="empty_icon">@drawable/empty_light</item>
+
+        <!-- Custom hamburger icon and dots color-->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="actionOverflowButtonStyle">@style/OverFlow</item>
+
+    </style>
+
+    <style name="AppTheme.Dark" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/darkPrimary</item>
+        <item name="colorPrimaryDark">@color/darkPrimaryDark</item>
+        <item name="colorAccent">@color/darkAccent</item>
+
+        <!--<item name="colorControlNormal">@color/lightHighlight</item>-->
+        <item name="colorControlActivated">?mainColor</item>
+        <item name="colorControlHighlight">?mainColor</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="backgroundColor">@color/darkBackground</item>
+        <item name="mainColor">@color/orange500</item>
+
+        <item name="android:buttonStyle">@style/DarkButton</item>
+
+        <item name="cardStyle">@style/CardViewStyle.Dark</item>
+
+        <item name="preferenceTheme">@style/Theme.SettingsPreference</item>
+
+        <item name="empty_icon">@drawable/empty_dark</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="actionOverflowButtonStyle">@style/OverFlow</item>
+
+    </style>
+
+    <style name="AppTheme.Alternate" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/alternatePrimary</item>
+        <item name="colorPrimaryDark">@color/alternatePrimaryDark</item>
+        <item name="colorAccent">@color/alternateAccent</item>
+
+        <!--<item name="colorControlNormal">@color/lightHighlight</item>-->
+        <item name="colorControlActivated">?mainColor</item>
+        <item name="colorControlHighlight">?mainColor</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="backgroundColor">@color/alternateBackground</item>
+        <item name="mainColor">@color/darkorange</item>
+
+        <item name="android:buttonStyle">@style/AlternateButton</item>
+
+        <item name="cardStyle">@style/CardViewStyle.Alternate</item>
+
+        <item name="empty_icon">@drawable/empty_dark</item>
+
+        <item name="preferenceTheme">@style/Theme.SettingsPreference</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="actionOverflowButtonStyle">@style/OverFlow</item>
+
+    </style>
+
+    <!-- Toolbar Styles -->
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">?colorAccent</item>
+    </style>
+
+    <style name="OverFlow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">?colorAccent</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">?attr/colorAccent</item>
+    </style>
+
+    <!-- ActionBar Style -->
+    <style name="AppTheme.Base.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" >
+        <item name="android:textColorPrimary">?mainColor</item>
+        <item name="android:textColorSecondary">?mainColor</item>
+    </style>
+
+    <style name="AppTheme.Base.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" >
+        <item name="android:colorBackground">@color/card_dark</item>
+        <item name="android:textColor">?mainColor</item>
+    </style>
+
+    <style name="AppTheme.Dark.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.Dark.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <style name="AppTheme.Alternate.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.Alternate.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Buttons Style -->
+    <style name="LightButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/darkorange</item>
+        <item name="colorButtonNormal">?colorAccent</item>
+    </style>
+
+    <style name="DarkButton" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/darkorange</item>
+    </style>
+
+    <style name="AlternateButton" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/darkorange</item>
+    </style>
+
+    <!-- Cardviews Style -->
+
+    <style name="CardViewStyle" parent="CardView">
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">0dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardPreventCornerOverlap">false</item>
+    </style>
+
+    <style name="CardViewStyle.Light">
+        <item name="cardBackgroundColor">@color/card_light</item>
+    </style>
+
+    <style name="CardViewStyle.Dark">
+        <item name="cardBackgroundColor">@color/card_dark</item>
+    </style>
+
+    <style name="CardViewStyle.Alternate">
+        <item name="cardBackgroundColor">@color/card_alternate</item>
+    </style>
+
+    <style name="Theme.SettingsPreference" parent="@style/PreferenceThemeOverlay.v14.Material">
+        <item name="android:layout">@layout/fragment_settings</item>
+
+    </style>
+
+</resources>
