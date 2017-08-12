@@ -97,7 +97,7 @@ class VersionRepository private constructor(context: Context) : IVersionReposito
             override fun onResponse(call: Call<List<String>>, response: Response<List<String>>) {
                 if (response.isSuccessful) {
                     doAsync {
-                        val newVersion: String = response.body()[0]
+                        val newVersion: String = response.body()!![0]
                         Log.i(TAG, "Server Version: %s".format(newVersion))
                         if (newVersion != onLocalLoad()) {
                             uiThread {

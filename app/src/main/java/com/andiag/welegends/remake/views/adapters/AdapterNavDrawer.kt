@@ -4,13 +4,12 @@ import android.graphics.Color
 import android.widget.TextView
 import com.andiag.welegends.remake.R
 import com.andiag.welegends.remake.common.base.ActivityBase
+import com.andiag.welegends.remake.views.adapters.items.ItemNavDrawer
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 
-/**
- * Created by andyq on 24/12/2016.
- */
-class AdapterNavDrawer(layoutResId: Int, data: List<com.andiag.welegends.views.adapters.items.ItemNavDrawer>) : BaseQuickAdapter<com.andiag.welegends.views.adapters.items.ItemNavDrawer, BaseViewHolder>(layoutResId, data) {
+
+class AdapterNavDrawer(layoutResId: Int, data: List<ItemNavDrawer>) : BaseQuickAdapter<ItemNavDrawer, BaseViewHolder>(layoutResId, data) {
 
     private var selected = 0
     private var colorTextSelected: Int = 0
@@ -29,14 +28,14 @@ class AdapterNavDrawer(layoutResId: Int, data: List<com.andiag.welegends.views.a
         }
     }
 
-    override fun convert(holder: BaseViewHolder, item: com.andiag.welegends.views.adapters.items.ItemNavDrawer) {
+    override fun convert(holder: BaseViewHolder, item: ItemNavDrawer) {
         if (firstTime) {
             colorTextSelected = ActivityBase.resolveColorAttribute(mContext,R.attr.mainColor)
             firstTime = false
         }
         holder.setImageResource(R.id.imageItem, item.imageId)
         val title = holder.getView<TextView>(R.id.textItem)
-        title.setText(item.title)
+        title.text = item.title
         if (holder.adapterPosition == selected) {
             title.setTextColor(colorTextSelected)
         } else {

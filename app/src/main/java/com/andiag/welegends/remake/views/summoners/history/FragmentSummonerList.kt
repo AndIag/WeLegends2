@@ -19,9 +19,6 @@ import org.jetbrains.anko.toast
 import java.util.*
 
 
-/**
- * Created by andyq on 09/12/2016.
- */
 @Presenter(presenter = PresenterSummonerList::class)
 @FragmentLayout(res = R.layout.fragment_summoner_list)
 class FragmentSummonerList : AIButterFragment<PresenterSummonerList>(), IViewSummonerList {
@@ -59,8 +56,7 @@ class FragmentSummonerList : AIButterFragment<PresenterSummonerList>(), IViewSum
         recycler.addOnItemTouchListener(object : OnItemClickListener() {
             override fun onSimpleItemClick(adapter: BaseQuickAdapter<*, *>, view: View?, position: Int) {
                 startActivity((mParentContext as ActivitySummoners)
-                        .createMainIntent((adapter as AdapterSummonerList)
-                                .getItem(position), true))
+                        .createMainIntent((adapter as AdapterSummonerList).getItem(position)!!, true))
             }
         })
         mPresenter.loadSummoners()

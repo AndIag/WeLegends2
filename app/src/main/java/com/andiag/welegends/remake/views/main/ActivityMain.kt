@@ -25,6 +25,7 @@ import com.andiag.welegends.remake.R
 import com.andiag.welegends.remake.common.base.ActivityBase
 import com.andiag.welegends.remake.views.FragmentSettings
 import com.andiag.welegends.remake.views.adapters.AdapterNavDrawer
+import com.andiag.welegends.remake.views.adapters.items.ItemNavDrawer
 import com.andiag.welegends.remake.views.main.stats.FragmentSummonerStats
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
@@ -92,11 +93,11 @@ class ActivityMain : ActivityBase() {
 
     private fun initializeDrawer() {
         drawerList.layoutManager = LinearLayoutManager(this)
-        val items = ArrayList<com.andiag.welegends.views.adapters.items.ItemNavDrawer>()
-        items.add(com.andiag.welegends.views.adapters.items.ItemNavDrawer(drawerTitles[0], R.drawable.ic_search))
-        items.add(com.andiag.welegends.views.adapters.items.ItemNavDrawer(drawerTitles[1], R.drawable.ic_search))
-        items.add(com.andiag.welegends.views.adapters.items.ItemNavDrawer(drawerTitles[2], R.drawable.ic_search))
-        items.add(com.andiag.welegends.views.adapters.items.ItemNavDrawer(drawerTitles[3], R.drawable.ic_search))
+        val items = ArrayList<ItemNavDrawer>()
+        items.add(ItemNavDrawer(drawerTitles[0], R.drawable.ic_search))
+        items.add(ItemNavDrawer(drawerTitles[1], R.drawable.ic_search))
+        items.add(ItemNavDrawer(drawerTitles[2], R.drawable.ic_search))
+        items.add(ItemNavDrawer(drawerTitles[3], R.drawable.ic_search))
         drawerList.addOnItemTouchListener(object : OnItemClickListener() {
             override fun onSimpleItemClick(baseQuickAdapter: BaseQuickAdapter<*, *>, view: View, i: Int) {
                 selectItem(i)
@@ -146,12 +147,7 @@ class ActivityMain : ActivityBase() {
     }
 
     fun getActionBarView(): View {
-        val window = this.window
-        val decorView = window.decorView
-        val packageName = this.packageName
-        val resId = this.resources.getIdentifier("action_bar_container", "id", packageName)
-        val actionBarView = decorView.findViewById(resId)
-        return actionBarView
+        return this.window.decorView.findViewById<View>(this.resources.getIdentifier("action_bar_container", "id", this.packageName))
     }
 
     override fun onBackPressed() {

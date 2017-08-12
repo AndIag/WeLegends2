@@ -35,23 +35,23 @@ class CallbackStaticData<T : OrmBaseModel>(
                 runnable.run()
                 return
             }
-            Log.e(TAG, "ERROR: onResponse: %s".format(response.errorBody().string()))
+            Log.e(TAG, "ERROR: onResponse: %s".format(response.errorBody()!!.string()))
             Log.i(TAG, "Semaphore released with errors")
             semaphore.release(1)
             callback.onError(Throwable(response.message()))
         } else {
             doAsync {
                 try {
-                    val clazz: Class<T> = response.body().data!!.values.first().javaClass
-                    Log.i(TAG, "Loaded %s: %s".format(clazz.simpleName, response.body().data!!.keys))
+                    val clazz: Class<T> = response.body()!!.data!!.values.first().javaClass
+                    Log.i(TAG, "Loaded %s: %s".format(clazz.simpleName, response.body()!!.data!!.keys))
                     if (clazz.interfaces.contains(KeyInMapTypeAdapter::class.java)) {
-                        for ((k, v) in response.body().data!!) {
+                        for ((k, v) in response.body()!!.data!!) {
                             (v as KeyInMapTypeAdapter).setKey(k)
                             v.saveOrUpdate()
                         }
                     }
                     if (!clazz.interfaces.contains(KeyInMapTypeAdapter::class.java)) {
-                        for (v in response.body().data!!.values) {
+                        for (v in response.body()!!.data!!.values) {
                             v.saveOrUpdate()
                         }
                     }

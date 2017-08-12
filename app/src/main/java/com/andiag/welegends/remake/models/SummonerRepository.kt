@@ -145,8 +145,8 @@ class SummonerRepository private constructor() : ISummonerRepository {
                     override fun onResponse(call: Call<Summoner>?, response: Response<Summoner>?) {
                         if (response!!.isSuccessful) {
                             doAsync {
-                                Log.i(TAG, "Summoner %d found".format(response.body().riotId))
-                                val summoner: Summoner = response.body()
+                                Log.i(TAG, "Summoner %d found".format(response.body()!!.riotId))
+                                val summoner: Summoner = response.body()!!
                                 summoner.region = region
                                 summoner.lastUpdate = Calendar.getInstance().timeInMillis
                                 summoner.saveOrUpdate()

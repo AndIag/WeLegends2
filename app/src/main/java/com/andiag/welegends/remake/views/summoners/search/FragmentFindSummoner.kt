@@ -71,7 +71,7 @@ class FragmentFindSummoner : AIButterFragment<PresenterFindSummoner>(), IViewFin
         numberPicker.maxValue = regions.size - 1
         numberPicker.displayedValues = regions
         numberPicker.wrapSelectorWheel = true
-        numberPicker.setOnValueChangedListener({ numberPicker, any, i ->
+        numberPicker.setOnValueChangedListener({ _, _, i ->
             region = regions[i]
         })
     }
